@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS ToDoDb;
+USE ToDoDb;
+
+CREATE TABLE IF NOT EXISTS ToDoTasks (
+    Id CHAR(36) NOT NULL PRIMARY KEY,
+    ExpiryTime DATETIME NOT NULL,
+    Title VARCHAR(255) NOT NULL,
+    Description TEXT,
+    CompletePercent INT NOT NULL,
+    IsCompleted BOOLEAN NOT NULL
+);
