@@ -19,7 +19,6 @@ services:
       dockerfile: ToDoAPI/Dockerfile
     ports:
       - "5209:80"
-      - "7276:443"
     depends_on:
       - db
     environment:

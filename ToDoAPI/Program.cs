@@ -7,6 +7,10 @@ using ToDoAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args); {
 
+    // Set urls only for http for testing in docker, Swagger will work when you compile it in VS because of dev-certificate
+    if (builder.Environment.IsProduction())
+        builder.WebHost.UseUrls("http://*:80");
+
     // Add Sql and establish connection
 
     builder.Services.AddDbContext<ToDoDbContext>(options => {
